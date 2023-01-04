@@ -66,9 +66,39 @@ const InitialPage = () => {
   return ( 
     <>
    
- 
+   <Paper    sx={{
+        position: 'relative',
+        backgroundColor: 'white',
+        color: '#fff',
+        mb: 4,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',       
+        backgroundImage: `url(${Banner})`,
+
+      }}> 
+
+    
+   <Grid item md={30}>
+          <Box
+            sx={{
+              position: 'relative',
+              p: { xs: 20, md: 25 },
+              pr: { md: 0 },
+            }}
+          >
+            <Typography component="h1" variant="h1" color="inherit" gutterBottom>
+              {'Titulo'}
+            </Typography>
+           
+           
+            
+          </Box>
+        </Grid>
+        
+   </Paper>
     {/* Increase the priority of the hero background image */}
-    {<img  src={Banner}   className="Banner"/>}
+   
     
  
  
