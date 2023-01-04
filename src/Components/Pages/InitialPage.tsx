@@ -66,8 +66,8 @@ setrenderizar(true);
       image: '../../../Layouts/Images/ImagenCard.png',
       recomendado: 'US $ 150,0',
       minimo: 'Desde US $ 85,00',
-
-     
+      descripcion:'una larga descripcion' ,
+      puntuacion:'3.0'   
     },
     {
       pais: 'colombia',
@@ -75,6 +75,8 @@ setrenderizar(true);
       image: '../../../Layouts/Images/ImagenCard.png',
       recomendado: 'US $ 100,0',
       minimo: 'Desde US $ 60,00',
+      descripcion:'una larga descripcion',
+      puntuacion:'4.0'     
     },
     {
       pais: 'colombia',
@@ -82,6 +84,8 @@ setrenderizar(true);
       image: '../../../Layouts/Images/ImagenCard.png',
       recomendado: 'US $ 100,0',
       minimo: 'Desde US $ 60,00',
+      descripcion:'una larga descripcion',
+      puntuacion:'4.5'         
     },
     {
       pais: 'colombia',
@@ -89,6 +93,8 @@ setrenderizar(true);
       image: '../../../Layouts/Images/ImagenCard.png',
       recomendado: 'US $ 100,0',
       minimo: 'Desde US $ 60,00',
+      descripcion:'una larga descripcion' ,
+      puntuacion:'5.0'        
     },
   ];
 
