@@ -36,8 +36,7 @@ function App() {
           <Route  path="/pagina2" element={<Pagina2/>}/>            
         
         </Routes>
-      </Layout>
-      <Footer/>
+      </Layout>  
     </Suspense>        
     </BrowserRouter>
   );
