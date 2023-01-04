@@ -51,7 +51,8 @@ const Pagina2 = () => {
   }, []);
 
   //Funcion que permite aumentar o disminuir el tamaño de la
-  const onCancel = (): void => { };
+ 
+  console.log(localStorage.getItem('seleccionado'));
 
   const prueba = (): void => {
     window.close();

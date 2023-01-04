@@ -5,7 +5,7 @@
 
 import { ModalComponent } from '../modal.component';
 import Button from 'antd/es/button';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 //import { ApiService } from 'app/services/Apis.service';
@@ -14,14 +14,17 @@ import { useCallback, useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import React from 'react';
 import Banner from '../../Layouts/Images/Banner.png';
+
 import { Box, Grid, Paper, Typography } from '@mui/material';
+import FeaturedPost from './Seccions/Cards';
 
 
 
 const InitialPage = () => {
     const navigate = useNavigate();
  
- 
+    const [base64, setbase64] = useState<any>();
+    const [renderizar, setrenderizar] = useState<boolean>(false);
  // const api = new ApiService(accountIdentifier);
   
 
@@ -33,8 +36,7 @@ const InitialPage = () => {
 
   const getListas = useCallback(
     async () => {
-    
-
+setrenderizar(true);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
@@ -59,20 +61,34 @@ const InitialPage = () => {
 
   const featuredPosts = [
     {
-      title: 'Featured post',
-      date: 'Nov 12',
-      description:
-        'This is a wider card with supporting text below as a natural lead-in to additional content.',
-      image: 'https://source.unsplash.com/random',
-      imageLabel: 'Image Text',
+      pais: 'colombia',
+      lugar: 'Guatape',
+      image: '../../../Layouts/Images/ImagenCard.png',
+      recomendado: 'US $ 150,0',
+      minimo: 'Desde US $ 85,00',
+
+     
     },
     {
-      title: 'Post title',
-      date: 'Nov 11',
-      description:
-        'This is a wider card with supporting text below as a natural lead-in to additional content.',
-      image: 'https://source.unsplash.com/random',
-      imageLabel: 'Image Text',
+      pais: 'colombia',
+      lugar: 'Eje Cafetero',
+      image: '../../../Layouts/Images/ImagenCard.png',
+      recomendado: 'US $ 100,0',
+      minimo: 'Desde US $ 60,00',
+    },
+    {
+      pais: 'colombia',
+      lugar: 'la costa',
+      image: '../../../Layouts/Images/ImagenCard.png',
+      recomendado: 'US $ 100,0',
+      minimo: 'Desde US $ 60,00',
+    },
+    {
+      pais: 'colombia',
+      lugar: 'bogota',
+      image: '../../../Layouts/Images/ImagenCard.png',
+      recomendado: 'US $ 100,0',
+      minimo: 'Desde US $ 60,00',
     },
   ];
 
@@ -85,6 +101,8 @@ const InitialPage = () => {
 
   };
   return ( 
+    <>
+    {renderizar && (
     <>
    
    <Paper    sx={{
@@ -117,12 +135,15 @@ const InitialPage = () => {
           </Box>
         </Grid>
         
-   </Paper>
-    {/* Increase the priority of the hero background image */}
+   </Paper>   
    
     
  
- 
+    <Grid container spacing={2}>
+            {featuredPosts.map((post) => (
+              <FeaturedPost  post={post} />
+            ))}
+          </Grid>
        
 
 
@@ -149,8 +170,8 @@ const InitialPage = () => {
 
     </>
     
-   
-
+    )}
+</>
   );
 };
 

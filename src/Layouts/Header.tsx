@@ -15,7 +15,7 @@ import '../App.css';
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useEffect, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 // Herramientas
 import { confirmMessage } from '../services/settings/message.service';
 
@@ -34,14 +34,23 @@ const { Header } = Layout;
 
  function Headers(props: HeaderProps) {
   const { sections } = props;
-
+  const navigate = useNavigate();
   return (
     <React.Fragment>
+   
         <Header   
     
         className='d-flex justify-content-between app-bg-transparent border-bottom shadow w-100 fixed-top px-0'
       style={{ zIndex: 1003,background:'white' }}>
+        
        <div className='d-flex'>
+       <Button   style={{width:60, height:60,alignContent:'center',alignItems:'center'}} onClick={() => {
+                  navigate('/');
+                    }}>
+        
+                     Inicio
+          
+            </Button>
             {sections.map((section) => (
               <Link
                 color="inherit"
