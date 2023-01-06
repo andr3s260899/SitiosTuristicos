@@ -112,7 +112,7 @@ export default function FeaturedPost(props: FeaturedPostProps) {
                     type="primary"
                     htmlType="button"
                     onClick={() => {
-                      localStorage.setItem("seleccionado", post.lugar);
+                      localStorage.setItem("seleccionado", JSON.stringify(post));
                       navigate('/pagina2')
                     }}
                   >
@@ -137,5 +137,6 @@ interface FeaturedPostProps {
     minimo: string;
     descripcion: string;
     puntuacion: string;
+    opiniones:string;
   };
 }

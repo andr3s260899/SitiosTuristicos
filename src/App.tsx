@@ -6,7 +6,7 @@ import { lazy, Suspense } from 'react';
 import  Footer  from './Layouts/Footer';
 import  Headers  from './Layouts/Header';
 import  InitialPage  from './Components/Pages/InitialPage';
-import  Pagina2  from './Components/Pages/Pagina2';
+import  Pagina2  from './Components/Pages/Lugar.page';
 
 // Antd
 import Spin from 'antd/es/spin';
@@ -14,6 +14,7 @@ import Spin from 'antd/es/spin';
 // Rutas
 import { Layout } from 'antd';
 import React from 'react';
+import { Container } from '@mui/material';
 
 // Pages
 
@@ -27,7 +28,8 @@ const sections=[{ title: 'Destinos', url: '/Destinos' },
 function App() {
   return (
     <BrowserRouter>    
-      <Suspense fallback={<Spin className='fadeIn app-loading' tip='Cargando Componentes...' />}>      
+      <Suspense fallback={<Spin className='fadeIn app-loading' tip='Cargando Componentes...' />}>     
+      
       <Layout>
       <Headers sections={sections}/>
      
@@ -37,6 +39,7 @@ function App() {
         
         </Routes>
       </Layout>  
+    
     </Suspense>        
     </BrowserRouter>
   );

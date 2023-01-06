@@ -23,7 +23,7 @@ import FeaturedPost from './Seccions/Cards';
 const InitialPage = () => {
     const navigate = useNavigate();
  
-    const [base64, setbase64] = useState<any>();
+   
     const [renderizar, setrenderizar] = useState<boolean>(false);
  // const api = new ApiService(accountIdentifier);
   
@@ -67,7 +67,8 @@ setrenderizar(true);
       recomendado: 'US $ 150,0',
       minimo: 'Desde US $ 85,00',
       descripcion:'una larga descripcion' ,
-      puntuacion:'3.0'   
+      puntuacion:'3.0',
+      opiniones:'200'   
     },
     {
       pais: 'colombia',
@@ -76,7 +77,8 @@ setrenderizar(true);
       recomendado: 'US $ 100,0',
       minimo: 'Desde US $ 60,00',
       descripcion:'una larga descripcion',
-      puntuacion:'4.0'     
+      puntuacion:'4.0',  
+      opiniones:'200'    
     },
     {
       pais: 'colombia',
@@ -85,7 +87,8 @@ setrenderizar(true);
       recomendado: 'US $ 100,0',
       minimo: 'Desde US $ 60,00',
       descripcion:'una larga descripcion',
-      puntuacion:'4.5'         
+      puntuacion:'4.5' ,  
+      opiniones:'200'         
     },
     {
       pais: 'colombia',
@@ -94,7 +97,8 @@ setrenderizar(true);
       recomendado: 'US $ 100,0',
       minimo: 'Desde US $ 60,00',
       descripcion:'una larga descripcion' ,
-      puntuacion:'5.0'        
+      puntuacion:'5.0',  
+      opiniones:'200'         
     },
   ];
 
