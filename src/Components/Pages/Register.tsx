@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -18,6 +17,8 @@ import { useNavigate } from 'react-router-dom';
 
 //import { ApiService } from 'app/services/Apis.service';
 import { useCallback, useContext, useEffect, useState } from 'react';
+import { Button, Form } from 'antd';
+import Swal from 'sweetalert2';
 
 function Copyright(props: any) {
   return (
@@ -35,6 +36,38 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export default function SignUp() {
+  const getListas = useCallback(
+    async () => {
+      let destino: any = { puntuacion: "4.5" };
+      let star: any[] = ["0", "0", "0", "0", "0"];
+      destino = JSON.parse(localStorage.getItem("seleccionado") + "");
+
+      for (
+        let index = 0;
+        index < Number.parseInt(destino.puntuacion);
+        index++
+      ) {
+        star[index] = "1";
+      }
+      console.log(destino.puntuacion);
+      console.log(destino.puntuacion.substring(2, 3));
+      if (destino.puntuacion.substring(2, 3) === "5") {
+        star[Number.parseInt(destino.puntuacion)] = "0.5";
+      }
+
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
+  useEffect(() => {
+    getListas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
+
+  const [form] = Form.useForm<any>();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -44,9 +77,33 @@ export default function SignUp() {
       country: data.get('country.label'),
       password: data.get('password'),
       rpassword: data.get('rpassword'),
-
     });
   };
+
+  const onSubmit = () => {
+    const valores = form.getFieldsValue();
+    console.log({
+      fullname: valores.fullName,
+      email: valores.email,
+      country: valores.country,
+      password: valores.password,
+      rpassword: valores.rpassword
+    });
+    if (valores.password === valores.rpassword) {
+      form.resetFields()
+    } else {
+      form.resetFields(['password', 'rpassword'])
+
+      Swal.fire({
+        title: 'The passwords do not match',
+        hideClass: {
+          popup: 'animate_animated animate_fadeOutUp'
+        },
+        icon: 'error'
+      });
+
+    }
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -63,105 +120,143 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
+          <Form form={form} layout="horizontal" onFinish={onSubmit}>
+            <Grid container spacing={1}>
               <Grid item xs={12} sm={12}>
-                <TextField
-                  autoComplete="given-name"
+                <Form.Item
+                  label=""
                   name="fullName"
-                  fullWidth
-                  id="fullName"
-                  label="Full Name"
-                  autoFocus
-                />
+                  rules={[{ required: true }]}
+                >
+                  <TextField
+                    autoComplete="given-name"
+                    name="fullName"
+                    fullWidth
+                    required
+                    id="fullName"
+                    label="Full Name"
+                    autoFocus
+                  />
+                </Form.Item>
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  id="email"
-                  label="Email Address"
+                <Form.Item
+                  label=""
                   name="email"
-                  autoComplete="email"
-                  type={"email"}
-                />
+                  rules={[{ required: true }]}
+                >
+                  <TextField
+                    fullWidth
+                    required
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                    type={"email"}
+                  />
+                </Form.Item>
               </Grid>
 
               <Grid item xs={12}>
-                <Autocomplete
-                  id="country"
-                  options={countries}
-                  autoHighlight
-                  getOptionLabel={(option) => option.label}
-                  renderOption={(props, option) => (
-                    <Box
-                      component="li"
-                      id="country"
-                      sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
-                      {...props}
-                    >
-                      <img
-                        loading="lazy"
-                        width="20"
-                        src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
-                        srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
-                        alt=""
+                <Form.Item
+                  label=""
+                  name="country"
+                  rules={[{ required: true }]}
+                >
+                  <Autocomplete
+                    id="country"
+                    options={countries}
+                    autoHighlight
+                    getOptionLabel={(option) => option.label}
+                    renderOption={(props, option) => (
+                      <Box
+                        component="li"
+                        id="country"
+                        sx={{ '& > img': { mr: 2, flexShrink: 0 } }}
+                        {...props}
+                      >
+                        <img
+                          loading="lazy"
+                          width="20"
+                          src={`https://flagcdn.com/w20/${option.code.toLowerCase()}.png`}
+                          srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
+                          alt=""
+                        />
+                        {option.label}
+                      </Box>
+                    )}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        id="country"
+                        label="Choose a country"
+                        inputProps={{
+                          ...params.inputProps,
+                          autoComplete: 'new-password', // disable autocomplete and autofill
+                        }}
                       />
-                      {option.label}
-                    </Box>
-                  )}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      id="country"
-                      label="Choose a country"
-                      inputProps={{
-                        ...params.inputProps,
-                        autoComplete: 'new-password', // disable autocomplete and autofill
-                      }}
-                    />
-                  )}
-                />
+                    )}
+                  />
+                </Form.Item>
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  fullWidth
+                <Form.Item
+                  label=""
                   name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
+                  rules={[{ required: true }]}
+                >
+                  <TextField
+                    fullWidth
+                    required
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="new-password"
+                  />
+                </Form.Item>
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  fullWidth
+                <Form.Item
+                  label=""
                   name="rpassword"
-                  label="Repeat your Password"
-                  type="password"
-                  id="rpassword"
-                  autoComplete="r-password"
-                />
+                  rules={[{ required: true }]}
+                >
+                  <TextField
+                    fullWidth
+                    required
+                    name="rpassword"
+                    label="Repeat your Password"
+                    type="password"
+                    id="rpassword"
+                    autoComplete="r-password"
+                  />
+                </Form.Item>
               </Grid>
               <Grid item xs={12}>
               </Grid>
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+            <Form.Item
+              label=""
+              name="Enviar"
             >
-              Sign Up
-            </Button>
+              <Button
+                className="ml-15 float-left button btn btn-default"
+                type="primary"
+                htmlType="submit"
+              >
+                Sing up
+              </Button>
+            </Form.Item>
             <Grid container justifyContent="flex-end">
               <Grid item
-              sx={{ mb: 4}}>
+                sx={{ mb: 4 }}>
                 <Link href="/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>
-          </Box>
+          </Form>
         </Box>
       </Container>
     </ThemeProvider>
