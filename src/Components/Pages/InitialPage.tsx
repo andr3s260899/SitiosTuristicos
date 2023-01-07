@@ -68,7 +68,8 @@ setrenderizar(true);
       minimo: 'Desde US $ 85,00',
       descripcion:'una larga descripcion' ,
       puntuacion:'3.0',
-      opiniones:'200'   
+      opiniones:'200' ,
+      location:'345-234231-'  
     },
     {
       pais: 'colombia',
@@ -78,7 +79,8 @@ setrenderizar(true);
       minimo: 'Desde US $ 60,00',
       descripcion:'una larga descripcion',
       puntuacion:'4.0',  
-      opiniones:'200'    
+      opiniones:'200' ,
+      location:'345-234231-'   
     },
     {
       pais: 'colombia',
@@ -88,7 +90,8 @@ setrenderizar(true);
       minimo: 'Desde US $ 60,00',
       descripcion:'una larga descripcion',
       puntuacion:'4.5' ,  
-      opiniones:'200'         
+      opiniones:'200',
+      location:'345-234231-'         
     },
     {
       pais: 'colombia',
@@ -98,7 +101,8 @@ setrenderizar(true);
       minimo: 'Desde US $ 60,00',
       descripcion:'una larga descripcion' ,
       puntuacion:'5.0',  
-      opiniones:'200'         
+      opiniones:'200' ,
+      location:'345-234231-'        
     },
   ];
 
@@ -149,10 +153,13 @@ setrenderizar(true);
    
     
  
-    <Grid container spacing={2}>
+    <Grid container  spacing={2}> 
+
             {featuredPosts.map((post) => (
-              <FeaturedPost  post={post} />
+              <FeaturedPost ventana={'pprincipal'} post={post} />
             ))}
+        
+            
           </Grid>
        
 
