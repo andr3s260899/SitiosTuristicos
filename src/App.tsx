@@ -1,5 +1,3 @@
-
-
 import { BrowserRouter,Routes ,Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
@@ -7,6 +5,8 @@ import  Footer  from './Layouts/Footer';
 import  Headers  from './Layouts/Header';
 import  InitialPage  from './Components/Pages/InitialPage';
 import  Pagina2  from './Components/Pages/Lugar.page';
+import  Login from './Components/Pages/Login';
+import  Register from './Components/Pages/Register';
 
 // Antd
 import Spin from 'antd/es/spin';
@@ -30,18 +30,19 @@ function App() {
     <BrowserRouter>    
       <Suspense fallback={<Spin className='fadeIn app-loading' tip='Cargando Componentes...' />}>     
       
-      <Layout>
-      <Headers sections={sections}/>
-     
-        <Routes>
-          <Route  path="/" element={<InitialPage/>}/> 
-          <Route  path="/pagina2" element={<Pagina2/>}/>            
-        
-        </Routes>
-      </Layout>  
-    
-    </Suspense>        
+        <Layout>
+        <Headers sections={sections}/>
+          <Routes>
+            <Route  path="/register" element={<Register/>}/> 
+            <Route  path="/login" element={<Login/>}/> 
+            <Route  path="/" element={<InitialPage/>}/> 
+            <Route  path="/pagina2" element={<Pagina2/>}/>            
+          
+          </Routes>
+        </Layout>  
+      </Suspense>        
     </BrowserRouter>
+  
   );
 }
 

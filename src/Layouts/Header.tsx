@@ -65,7 +65,9 @@ const { Header } = Layout;
             ))}
            
             <Button   style={{width:60, height:60,alignContent:'center',alignItems:'center'}}
-                    >
+                    onClick={() => {
+                      navigate('/login')
+                    }}>
                       <img src={User}  className="User " />
           
             </Button>
