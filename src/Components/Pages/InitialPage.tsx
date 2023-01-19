@@ -14,15 +14,18 @@ import { useCallback, useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import React from 'react';
 import Banner from '../../Layouts/Images/Banner.png';
+import User from '../../Layouts/Images/user.png';
+import Star from '../../Layouts/Images/iconstar.png';
 
 import { Box, Grid, Paper, Typography } from '@mui/material';
 import FeaturedPost from './Seccions/Cards';
+import { ApiService } from '../../services/ApiServices';
 
 
 
 const InitialPage = () => {
     const navigate = useNavigate();
- 
+    const api = new ApiService();
    
     const [renderizar, setrenderizar] = useState<boolean>(false);
  // const api = new ApiService(accountIdentifier);
@@ -31,11 +34,24 @@ const InitialPage = () => {
 
   //Cambiar de tema oscuro y claro
 
-  const onPersonNatural = () => navigate('/registro/Natural');
-  const onPersonJuridica = () => navigate('/registro/Juridico');
+
 
   const getListas = useCallback(
     async () => {
+      const valores= await api.ObtenerMunicipios();
+
+    
+      
+      if(localStorage.getItem('departamentos')===null || localStorage.getItem('departamentos')===undefined)
+      {
+        const valores2= await api.ObtenerDepartamentos();
+        localStorage.setItem('departamentos',JSON.stringify(valores2))
+        console.log(valores2);
+      }
+     
+      //const valores= await api.insertardatos();
+     console.log(valores);
+    
 setrenderizar(true);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -69,7 +85,10 @@ setrenderizar(true);
       descripcion:'una larga descripcion' ,
       puntuacion:'3.0',
       opiniones:'200' ,
-      location:'345-234231-'  
+      coordenadas: {
+        lat: 70,
+        lng: 80,
+      } 
     },
     {
       pais: 'colombia',
@@ -80,7 +99,10 @@ setrenderizar(true);
       descripcion:'una larga descripcion',
       puntuacion:'4.0',  
       opiniones:'200' ,
-      location:'345-234231-'   
+      coordenadas: {
+        lat: 70,
+        lng: 80,
+      }   
     },
     {
       pais: 'colombia',
@@ -91,7 +113,10 @@ setrenderizar(true);
       descripcion:'una larga descripcion',
       puntuacion:'4.5' ,  
       opiniones:'200',
-      location:'345-234231-'         
+      coordenadas: {
+        lat: 70,
+        lng: 80,
+      }   
     },
     {
       pais: 'colombia',
@@ -102,7 +127,10 @@ setrenderizar(true);
       descripcion:'una larga descripcion' ,
       puntuacion:'5.0',  
       opiniones:'200' ,
-      location:'345-234231-'        
+      coordenadas: {
+        lat: 70,
+        lng: 80,
+      } 
     },
   ];
 
@@ -118,45 +146,51 @@ setrenderizar(true);
     <>
     {renderizar && (
     <>
-   
-   <Paper    sx={{
-        position: 'relative',
-        backgroundColor: 'white',
-        color: '#fff',
-        mb: 4,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',       
-        backgroundImage: `url(${Banner})`,
+  
 
-      }}> 
-
-    
-   <Grid item md={30}>
-          <Box
-            sx={{
-              position: 'relative',
-              p: { xs: 20, md: 25 },
-              pr: { md: 0 },
-            }}
-          >
-            <Typography component="h1" variant="h1" color="inherit" gutterBottom>
-              {'Titulo'}
-            </Typography>
+   <section>
+        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+            <div className="carousel-inner">
+                <div className="carousel-item active">
+                    <img src={Banner} className="d-block w-100" alt="..." />
+                </div>
+                <div className="carousel-item ">
+                    <img src={User} className="d-block w-100" alt="..." />
+                </div>
+                <div className="carousel-item ">
+                    <img src={Star} className="d-block w-100" alt="..." />
+                </div>
+            </div>
            
-           
-            
-          </Box>
-        </Grid>
-        
-   </Paper>   
+            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <i className="fa-solid fa-arrow-left-long banner_icon"></i>
+                <span className="visually-hidden">Previous</span>
+            </button>
+            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <i className="fa-solid fa-arrow-right-long banner_icon"></i>
+                <span className="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
    
+    <Grid >
+    <div className="row">
+                <div className="col-lg-12 col-xs-12">
+                    <div className="colum_text">
+                        <p>Popultar activities</p>
+                    </div>
+                </div>
+            </div>
+
+    </Grid>
+   
+    <Grid container  spacing={4}> 
     
- 
-    <Grid container  spacing={2}> 
 
             {featuredPosts.map((post) => (
-              <FeaturedPost ventana={'pprincipal'} post={post} />
+              <FeaturedPost ventana={'pprincipal'} post={post} sub='0' />
             ))}
         
             

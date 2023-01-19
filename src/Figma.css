@@ -1,0 +1,576 @@
+.backgroundIcon,
+.menuChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2349px;
+  height: 2278px;
+}
+.menuChild {
+  border-radius: var(--br-md);
+  background-color: var(--color-white);
+  width: 1440px;
+  height: 72px;
+}
+.outdoors,
+.relaxation {
+  position: absolute;
+  top: 21px;
+  left: 1039px;
+}
+.outdoors {
+  left: 852px;
+}
+.attractions,
+.destinations {
+  position: absolute;
+  top: 21px;
+  left: 645px;
+}
+.destinations {
+  left: 282px;
+  color: #259fde;
+}
+.logo1Icon,
+.tours {
+  position: absolute;
+  top: 21px;
+  left: 507px;
+}
+.logo1Icon {
+  top: 13px;
+  left: 36px;
+  width: 41px;
+  height: 45px;
+  object-fit: cover;
+}
+.menuItem {
+  position: absolute;
+  top: 8px;
+  left: 1285px;
+  width: 56px;
+  height: 56px;
+}
+.iconShoppingCartOutline {
+  position: absolute;
+  height: 51.39%;
+  width: 2.57%;
+  top: 23.61%;
+  right: 7.5%;
+  bottom: 25%;
+  left: 89.93%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.menu,
+.userIcon {
+  position: absolute;
+  top: 8px;
+  left: 1361px;
+  width: 56px;
+  height: 56px;
+}
+.menu {
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 72px;
+}
+.card4Child,
+.phoneChild {
+  position: absolute;
+  top: 116px;
+  left: 110px;
+  border-radius: var(--br-md);
+  background-color: var(--color-white);
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.15);
+  width: 1196px;
+  height: 400px;
+}
+.phoneChild {
+  top: 35px;
+  left: -1px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-gray-300);
+  box-sizing: border-box;
+  width: 383.8px;
+  height: 54px;
+}
+.div {
+  position: absolute;
+  top: 47px;
+  left: 19.8px;
+  color: var(--color-gray-100);
+  display: inline-block;
+  width: 169.44px;
+}
+.phone,
+.points {
+  position: absolute;
+  left: 0;
+}
+.phone {
+  top: 250px;
+  width: 381.8px;
+  height: 88px;
+}
+.points {
+  top: 0;
+  display: inline-block;
+  width: 245.36px;
+}
+.password {
+  position: absolute;
+  top: 130px;
+  left: 563px;
+  width: 381.8px;
+  height: 88px;
+}
+.colombia,
+.country {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 106.73px;
+}
+.colombia {
+  top: 47px;
+  left: 19.8px;
+  width: 169.44px;
+}
+.contry {
+  position: absolute;
+  top: 0;
+  left: 565px;
+  width: 381.8px;
+  height: 88px;
+}
+.emailAddress,
+.estebangmailcom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 160.64px;
+  border-radius: 0;
+}
+.estebangmailcom {
+  top: 47px;
+  left: 19.8px;
+  width: 236.56px;
+  border-radius: 0;
+}
+.email {
+  position: absolute;
+  top: 130px;
+  left: 0px;
+  width: 381.8px;
+  height: 88px;
+  border-radius: 10px;
+}
+.juanEstebanCatao {
+  position: absolute;
+  top: 47px;
+  left: 20px;
+  display: inline-block;
+  width: 225px;
+}
+.fullName,
+.fullname {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fullName {
+  display: inline-block;
+  width: 112.23px;
+}
+.fullname {
+  width: 381.8px;
+  height: 88px;
+}
+.emojiColombiaIcon,
+.emojiColombiaIcon1 {
+  position: absolute;
+  height: 11.92%;
+  width: 4.26%;
+  top: 12.13%;
+  right: 1.53%;
+  bottom: 75.95%;
+  left: 94.21%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.emojiColombiaIcon1 {
+  top: 86.09%;
+  right: 60.78%;
+  bottom: 1.98%;
+  left: 34.96%;
+}
+.inputs {
+  position: absolute;
+  top: 137px;
+  left: 235px;
+  width: 946.8px;
+  height: 338px;
+}
+.buttonChild,
+.circlesIcon {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 1355.5px;
+  height: 519.5px;
+}
+.buttonChild {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--br-md);
+  background: linear-gradient(#45b5ef, #45b5ef), rgba(216, 242, 255, 0.71);
+}
+.loginCircleLineIcon {
+  position: absolute;
+  height: 55.77%;
+  width: 11.28%;
+  top: 21.15%;
+  right: 10.12%;
+  bottom: 23.08%;
+  left: 78.6%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  display: none;
+}
+.button,
+.createAccount {
+  position: absolute;
+  top: 11px;
+  left: 32px;
+}
+.button {
+  top: 422px;
+  left: 798px;
+  width: 282.77px;
+  height: 52px;
+  color: var(--color-white);
+}
+.editBoxFillIcon {
+  position: absolute;
+  top: 436px;
+  left: 1039px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.card4Item {
+  position: absolute;
+  top: 0;
+  left: 628px;
+  width: 164px;
+  height: 164px;
+  object-fit: cover;
+}
+.card1Child,
+.card4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card4 {
+  width: 1340px;
+  height: 559px;
+  font-size: var(--font-size-base);
+}
+.card1Child {
+  height: 66.64%;
+  width: 104.68%;
+  right: -4.68%;
+  bottom: 33.36%;
+  border-radius: var(--br-md) var(--br-md) 0 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.card1Item {
+  position: absolute;
+  height: 38.26%;
+  width: 100.33%;
+  top: 61.91%;
+  right: -0.17%;
+  bottom: -0.16%;
+  left: -0.17%;
+  border-radius: 0 0 var(--br-md) var(--br-md);
+  background-color: var(--color-white);
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-gray-100);
+  box-sizing: border-box;
+}
+.colombia1,
+.guatape {
+  position: absolute;
+  height: 7.83%;
+  width: 29.44%;
+  top: 62.23%;
+  left: 5.69%;
+  display: inline-block;
+}
+.guatape {
+  height: 9.46%;
+  width: 60.89%;
+  top: 71.69%;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+}
+.iconStar {
+  position: absolute;
+  height: 9.4%;
+  width: 9.65%;
+  top: 71.79%;
+  right: 21.54%;
+  bottom: 18.81%;
+  left: 68.81%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.div2,
+.fromUs,
+.us15000 {
+  position: absolute;
+  height: 7.5%;
+  display: inline-block;
+}
+.div2 {
+  width: 9.7%;
+  top: 72.67%;
+  left: 81.63%;
+  color: var(--color-teal-100);
+}
+.fromUs,
+.us15000 {
+  width: 32.45%;
+  top: 82.45%;
+  left: 6.69%;
+}
+.fromUs {
+  width: 45.5%;
+  top: 89.95%;
+  color: var(--color-black);
+}
+.iconHeart {
+  position: absolute;
+  height: 10.76%;
+  width: 11.04%;
+  top: 2.54%;
+  right: 7.33%;
+  bottom: 86.69%;
+  left: 81.63%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.card1,
+.card2Item {
+  position: absolute;
+  height: 33.38%;
+  width: 22.31%;
+  top: 66.62%;
+  right: 69.19%;
+  bottom: 0;
+  left: 8.51%;
+}
+.card2Item {
+  height: 37.93%;
+  width: 100%;
+  top: 62.07%;
+  right: 0;
+  left: 0;
+  border-radius: 0 0 var(--br-md) var(--br-md);
+  background-color: var(--color-white);
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-gray-100);
+  box-sizing: border-box;
+}
+.colombia2,
+.ejeCafetero {
+  position: absolute;
+  height: 7.83%;
+  width: 28.77%;
+  top: 62.23%;
+  left: 5.84%;
+  display: inline-block;
+}
+.ejeCafetero {
+  height: 9.46%;
+  width: 42.15%;
+  top: 71.69%;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+}
+.iconStar1 {
+  position: absolute;
+  height: 9.4%;
+  width: 9.65%;
+  top: 71.79%;
+  right: 40.19%;
+  bottom: 18.81%;
+  left: 50.16%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.div3,
+.fromUs1,
+.us10000 {
+  position: absolute;
+  height: 7.5%;
+  display: inline-block;
+}
+.div3 {
+  width: 10.04%;
+  top: 72.67%;
+  left: 63.05%;
+  color: var(--color-teal-100);
+}
+.fromUs1,
+.us10000 {
+  width: 31.45%;
+  top: 82.45%;
+  left: 6.84%;
+}
+.fromUs1 {
+  width: 44.83%;
+  top: 89.95%;
+  color: var(--color-black);
+}
+.iconHeart1 {
+  position: absolute;
+  height: 10.76%;
+  width: 11.04%;
+  top: 2.61%;
+  right: 4.99%;
+  bottom: 86.63%;
+  left: 83.97%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.card2 {
+  position: absolute;
+  height: 33.38%;
+  width: 22.31%;
+  top: 66.62%;
+  right: 44.26%;
+  bottom: 0;
+  left: 33.43%;
+}
+.cartagenaDeIndias,
+.colombia3 {
+  position: absolute;
+  height: 7.83%;
+  width: 29.11%;
+  top: 62.23%;
+  left: 5.66%;
+  display: inline-block;
+}
+.cartagenaDeIndias {
+  height: 9.46%;
+  width: 70.92%;
+  top: 71.69%;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+}
+.iconStar2 {
+  position: absolute;
+  height: 9.4%;
+  width: 9.65%;
+  top: 71.79%;
+  right: 13.83%;
+  bottom: 18.81%;
+  left: 76.53%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.div4,
+.fromUs2,
+.us18000 {
+  position: absolute;
+  height: 7.5%;
+  display: inline-block;
+}
+.div4 {
+  width: 10.71%;
+  top: 72.67%;
+  left: 89.29%;
+  color: var(--color-teal-100);
+}
+.fromUs2,
+.us18000 {
+  width: 32.45%;
+  top: 82.45%;
+  left: 6.66%;
+}
+.fromUs2 {
+  width: 45.16%;
+  top: 89.95%;
+  color: var(--color-black);
+}
+.iconHeart2 {
+  height: 10.76%;
+  width: 11.04%;
+  top: 2.61%;
+  right: 4.32%;
+  bottom: 86.63%;
+  left: 84.64%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.card3,
+.iconHeart2,
+.trips {
+  position: absolute;
+  left: 40px;
+}
+.card3 {
+  height: 33.38%;
+  width: 22.31%;
+  top: 66.62%;
+  right: 19.33%;
+  bottom: 0;
+  left: 58.36%;
+}
+.trips {
+  top: 120px;
+  left: 150px;
+  width: 1340px;
+  height: 918.6px;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-200);
+}
+.lastTrips {
+  position: absolute;
+  top: 700px;
+  left: 140px;
+  font-size: 30px;
+}
+.profile {
+  position: relative;
+  border-radius: var(--br-md);
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}

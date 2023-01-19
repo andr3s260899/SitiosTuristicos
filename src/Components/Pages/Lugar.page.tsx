@@ -76,7 +76,11 @@ const Pagina2 = () => {
         descripcion:'una larga descripcion' ,
         puntuacion:'3.0',
         opiniones:'200',
-        location:'345-234231-'         
+        coordenadas: {
+          lat: 70,
+          lng: 80,
+        },
+        zoom:8          
       },
       {
         pais: 'colombia',
@@ -87,7 +91,11 @@ const Pagina2 = () => {
         descripcion:'una larga descripcion',
         puntuacion:'4.0',  
         opiniones:'200' ,
-        location:'345-234231-'         
+        coordenadas: {
+          lat: 70,
+          lng: 80,
+        },
+        zoom:8          
       },
       {
         pais: 'colombia',
@@ -98,7 +106,11 @@ const Pagina2 = () => {
         descripcion:'una larga descripcion',
         puntuacion:'4.5' ,  
         opiniones:'200'  ,
-        location:'345-234231-'             
+        coordenadas: {
+          lat: 70,
+          lng: 80,
+        },
+        zoom:8              
       },
       {
         pais: 'colombia',
@@ -109,13 +121,18 @@ const Pagina2 = () => {
         descripcion:'una larga descripcion' ,
         puntuacion:'5.0',  
         opiniones:'200',
-        location:'345-234231-'         
+        coordenadas: {
+          lat: 70,
+          lng: 80,
+        },
+        zoom:8            
       },
     ];
 
 
   const getListas = useCallback(
     async () => {
+      console.log(JSON.parse(localStorage.getItem('departamentos')+"") )
       let destino: any = { puntuacion: "4.5" };
       let star: any[] = ["0", "0", "0", "0", "0"];
       destino = JSON.parse(localStorage.getItem("seleccionado") + "");
@@ -350,7 +367,7 @@ const Pagina2 = () => {
           </div>
           <Grid container spacing={2}>
             {cardseleccionado.map((post) => (
-              <FeaturedPost ventana={'lugar'} post={post} />
+              <FeaturedPost ventana={'lugar'} post={post} sub='1' />
             ))}
           </Grid>
          
